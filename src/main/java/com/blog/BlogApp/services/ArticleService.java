@@ -4,11 +4,12 @@ import com.blog.BlogApp.models.Article;
 import com.blog.BlogApp.repositories.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
 
-@Component
+@Service
 public class ArticleService {
 
     @Autowired
