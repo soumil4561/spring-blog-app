@@ -26,9 +26,19 @@ public class Article {
     private String title;
     private String content;
 
-    public Article(String title, String content) {
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "author_id", nullable = false)
+    private User author;
+
+    public Article(String title, String content){
         this.title = title;
         this.content = content;
+    }
+
+    public Article(String title, String content, User author) {
+        this.title = title;
+        this.content = content;
+        this.author = author;
     }
 
     @PrePersist
